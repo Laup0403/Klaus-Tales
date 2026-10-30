@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://p0l44ixuqksn"]
+
+[ext_resource type="Script" uid="uid://ceni1kg652btw" path="res://script/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://2fmh16umxc2l" path="res://sprites/hand.png" id="2_g2els"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gwks1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gwks1"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1934374576]
+script = ExtResource("1_3vyb7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=975280385]
+mesh = SubResource("CapsuleMesh_gwks1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1052791327]
+shape = SubResource("CapsuleShape3D_gwks1")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=2024955797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6280141, 0)
+
+[node name="Hand" type="CanvasLayer" parent="." unique_id=1296760866]
+
+[node name="HandRight" type="Sprite2D" parent="Hand" unique_id=425967519]
+position = Vector2(1599, 871.99994)
+rotation = -0.6547787
+scale = Vector2(0.2810484, 0.2810484)
+texture = ExtResource("2_g2els")
+
+[node name="HandLeft" type="Sprite2D" parent="Hand" unique_id=746272879]
+position = Vector2(217.99994, 901)
+rotation = 0.82983124
+scale = Vector2(0.2810484, 0.2810484)
+texture = ExtResource("2_g2els")
